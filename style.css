@@ -1,20 +1,55 @@
+@font-face {
+    font-family: 'MontSerrat';
+    src: url('assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: 300; /* Poids de la police (par exemple, normal, bold, etc.) */
+    font-style: light; /* Style de la police (par exemple, normal, italic, oblique) */
+        
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('assets/images/bg_home.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+}
 body {
+    margin-top: 2rem !important;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: top;
     height: 100vh;
     background-color: #f2f2f2;
+
+    font-family: 'MontSerrat', sans-serif !important;
 }
 
 header {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
+    max-width: 80%;
+    width: 100%;
+
+}
+header > h1 {
+    font-size: 3rem;
+    color: white;
+}
+.input-group {
+    width: 100%;
+    max-width: 80%;
 }
 
-.input-group {
-    max-width: 400px;
-}
 
 main {
     display: flex;
@@ -35,6 +70,12 @@ main {
     text-align: center;
 }
 
+.ville, .temp, .humidity, .wind{
+    font-size: 25px;
+    color: white;
+}
+
+
 @media screen and (max-width: 768px) {
     main {
         max-width: 100%;
@@ -47,8 +88,4 @@ main {
     .input-group {
         max-width: 100%;
     }
-}
-.ville, .temp, .humidity, .wind{
-    font-size: 25px;
-    color: white;
 }
